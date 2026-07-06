@@ -7,35 +7,45 @@ function Hero() {
   return (
     <section
       id="home"
-      className="relative overflow-hidden bg-slate-950 py-20 lg:py-32"
+      className="relative flex min-h-screen items-center overflow-hidden bg-slate-950 pt-20"
     >
       {/* Background Glow */}
-      <div className="absolute left-0 top-0 h-96 w-96 rounded-full bg-cyan-500/10 blur-3xl"></div>
-      <div className="absolute right-0 bottom-0 h-96 w-96 rounded-full bg-purple-500/10 blur-3xl"></div>
+      <div className="absolute left-[-120px] top-[-120px] h-[420px] w-[420px] rounded-full bg-cyan-500/15 blur-[120px]" />
+
+      <div className="absolute right-[-120px] bottom-[-120px] h-[420px] w-[420px] rounded-full bg-purple-500/10 blur-[120px]" />
 
       <Container>
-        <div className="grid items-center gap-16 lg:grid-cols-2">
-          {/* Left Side */}
-          <div className="relative z-10">
+        <div className="grid items-center gap-20 lg:grid-cols-2">
 
-            <p className="mb-5 text-sm font-semibold uppercase tracking-[0.35em] text-cyan-400">
-              Digital Services Agency
+          {/* LEFT */}
+          <div>
+
+            <p className="mb-6 text-sm font-semibold uppercase tracking-[0.4em] text-cyan-400">
+              DIGITAL SERVICES AGENCY
             </p>
 
             <h1 className="text-5xl font-extrabold leading-tight text-white lg:text-7xl">
-              Helping Businesses Build
+
+              Helping Businesses
+
+              <br />
+
+              Build Their
+
               <span className="block text-cyan-400">
-                Their Digital Presence
+                Digital Presence
               </span>
+
             </h1>
 
             <p className="mt-8 max-w-xl text-lg leading-8 text-slate-300">
-              WorkHub delivers modern websites, creative graphic design,
-              and technology tutoring that help businesses,
-              professionals, and students achieve their goals.
+              WorkHub creates modern websites, professional graphic
+              design, and technology tutoring that empower businesses,
+              professionals, and students to succeed in today's digital world.
             </p>
 
-            <div className="mt-10 flex flex-wrap gap-4">
+            <div className="mt-10 flex flex-wrap gap-5">
+
               <Button>
                 Get a Quote
               </Button>
@@ -44,41 +54,48 @@ function Hero() {
                 View Projects
                 <FaArrowRight className="ml-2 inline" />
               </Button>
+
             </div>
 
-            <div className="mt-12 flex gap-10">
+            <div className="mt-16 flex flex-wrap gap-12">
+
               <div>
-                <h3 className="text-3xl font-bold text-white">
+                <h3 className="text-4xl font-bold text-cyan-400">
                   25+
                 </h3>
-                <p className="text-slate-400">
-                  Projects Delivered
+
+                <p className="mt-2 text-slate-400">
+                  Completed Projects
                 </p>
               </div>
 
               <div>
-                <h3 className="text-3xl font-bold text-white">
+                <h3 className="text-4xl font-bold text-cyan-400">
                   15+
                 </h3>
-                <p className="text-slate-400">
+
+                <p className="mt-2 text-slate-400">
                   Happy Clients
                 </p>
               </div>
 
               <div>
-                <h3 className="text-3xl font-bold text-white">
-                  3+
+                <h3 className="text-4xl font-bold text-cyan-400">
+                  3
                 </h3>
-                <p className="text-slate-400">
-                  Services
+
+                <p className="mt-2 text-slate-400">
+                  Core Services
                 </p>
               </div>
+
             </div>
 
           </div>
 
-          {/* Right Side */}
-          <div className="relative">
+          {/* RIGHT */}
+
+          <div className="relative lg:pl-6">
             <HeroDashboard />
           </div>
 

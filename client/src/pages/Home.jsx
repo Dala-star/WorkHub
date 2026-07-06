@@ -1,37 +1,25 @@
 import Navbar from "../components/layout/Navbar";
 import Hero from "../components/home/Hero";
 import Services from "../components/home/Services";
-import WhyChoose from "../components/home/WhyChoose";
-import Portfolio from "../components/home/Portfolio";
-import Testimonials from "../components/home/Testimonials";
+import Projects from "../components/home/Projects";
+import About from "../components/home/About";
+import Contact from "../components/home/Contact";
 import Footer from "../components/layout/Footer";
-
-import Section from "../components/common/Section";
 
 function Home() {
   return (
     <>
       <Navbar />
 
-      <Section>
-        <Hero />
-      </Section>
+      <Hero />
 
-      <Section>
-        <Services />
-      </Section>
+      <Services />
 
-      <Section>
-        <WhyChoose />
-      </Section>
+      <Projects />
 
-      <Section>
-        <Portfolio />
-      </Section>
+      <About />
 
-      <Section>
-        <Testimonials />
-      </Section>
+      <Contact />
 
       <Footer />
     </>
