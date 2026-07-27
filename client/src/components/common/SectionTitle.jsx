@@ -2,7 +2,7 @@ function SectionTitle({ eyebrow, title, description }) {
   return (
     <div className="mb-14 text-center">
       {eyebrow && (
-        <p className="mb-3 text-sm font-semibold uppercase tracking-[0.3em] text-cyan-400">
+        <p className="mb-3 text-sm font-semibold uppercase tracking-[0.3em] text-[var(--color-primary)]">
           {eyebrow}
         </p>
       )}

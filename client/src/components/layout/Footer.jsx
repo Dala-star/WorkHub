@@ -1,5 +1,6 @@
 import Logo from "../common/Logo";
 import Container from "../common/Container";
+
 import {
   FaEnvelope,
   FaPhoneAlt,
@@ -8,11 +9,32 @@ import {
   FaLinkedin,
 } from "react-icons/fa";
 
+import contact from "../../constants/contact";
+import navigation from "../../constants/navigation";
+import services from "../../data/services";
+
+
 function Footer() {
   return (
-    <footer className="border-t border-slate-800 bg-slate-950">
+    <footer
+      className="
+        border-t
+        border-slate-800
+        bg-[var(--color-background)]
+      "
+    >
+
       <Container>
-        <div className="grid gap-12 py-16 md:grid-cols-2 lg:grid-cols-4">
+
+        <div
+          className="
+            grid
+            gap-12
+            py-16
+            md:grid-cols-2
+            lg:grid-cols-4
+          "
+        >
 
           {/* Company */}
 
@@ -20,25 +42,63 @@ function Footer() {
 
             <Logo />
 
-            <p className="mt-6 text-slate-400 leading-7">
+            <p
+              className="
+                mt-6
+                leading-7
+                text-slate-400
+              "
+            >
               WorkHub provides modern web development,
               creative graphic design, and technology
               tutoring for businesses, professionals,
               and students.
             </p>
 
-            <div className="mt-6 flex gap-4">
+
+            {/* Social Links */}
+
+            <div
+              className="
+                mt-6
+                flex
+                gap-4
+              "
+            >
 
               <a
-                href="#"
-                className="rounded-lg bg-slate-900 p-3 text-slate-400 transition hover:bg-cyan-500 hover:text-white"
+                href={contact.social.github}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="GitHub"
+                className="
+                  rounded-lg
+                  bg-slate-900
+                  p-3
+                  text-slate-400
+                  transition
+                  hover:bg-[var(--color-primary)]
+                  hover:text-white
+                "
               >
                 <FaGithub />
               </a>
 
+
               <a
-                href="#"
-                className="rounded-lg bg-slate-900 p-3 text-slate-400 transition hover:bg-cyan-500 hover:text-white"
+                href={contact.social.linkedin}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="LinkedIn"
+                className="
+                  rounded-lg
+                  bg-slate-900
+                  p-3
+                  text-slate-400
+                  transition
+                  hover:bg-[var(--color-primary)]
+                  hover:text-white
+                "
               >
                 <FaLinkedin />
               </a>
@@ -47,92 +107,223 @@ function Footer() {
 
           </div>
 
+
+
           {/* Quick Links */}
 
           <div>
 
-            <h3 className="mb-6 text-lg font-semibold text-white">
+            <h3
+              className="
+                mb-6
+                text-lg
+                font-semibold
+                text-white
+              "
+            >
               Quick Links
             </h3>
 
-            <ul className="space-y-3 text-slate-400">
 
-              <li><a href="#home">Home</a></li>
+            <ul
+              className="
+                space-y-3
+                text-slate-400
+              "
+            >
 
-              <li><a href="#services">Services</a></li>
+              {navigation.map((item) => (
 
-              <li><a href="#projects">Projects</a></li>
+                <li key={item.id}>
 
-              <li><a href="#about">About</a></li>
+                  <a
+                    href={item.link}
+                    className="
+                      transition
+                      hover:text-[var(--color-primary)]
+                    "
+                  >
+                    {item.name}
+                  </a>
 
-              <li><a href="#contact">Contact</a></li>
+                </li>
+
+              ))}
 
             </ul>
 
           </div>
+
+
+
 
           {/* Services */}
 
           <div>
 
-            <h3 className="mb-6 text-lg font-semibold text-white">
+            <h3
+              className="
+                mb-6
+                text-lg
+                font-semibold
+                text-white
+              "
+            >
               Services
             </h3>
 
-            <ul className="space-y-3 text-slate-400">
 
-              <li>Web Development</li>
+            <ul
+              className="
+                space-y-3
+                text-slate-400
+              "
+            >
 
-              <li>Graphic Design</li>
+              {services.map((service) => (
 
-              <li>Technology Tutoring</li>
+                <li
+                  key={service.id}
+                >
+                  {service.title}
+                </li>
+
+              ))}
 
             </ul>
 
           </div>
 
+
+
+
+
           {/* Contact */}
 
           <div>
 
-            <h3 className="mb-6 text-lg font-semibold text-white">
+            <h3
+              className="
+                mb-6
+                text-lg
+                font-semibold
+                text-white
+              "
+            >
               Contact
             </h3>
 
-            <div className="space-y-5">
 
-              <div className="flex items-center gap-3 text-slate-400">
-                <FaEnvelope className="text-cyan-400" />
-                <span>hello@workhub.com</span>
+            <div
+              className="
+                space-y-5
+              "
+            >
+
+              <div
+                className="
+                  flex
+                  items-center
+                  gap-3
+                  text-slate-400
+                "
+              >
+
+                <FaEnvelope
+                  className="
+                    text-[var(--color-primary)]
+                  "
+                />
+
+                <span>
+                  {contact.email}
+                </span>
+
               </div>
 
-              <div className="flex items-center gap-3 text-slate-400">
-                <FaPhoneAlt className="text-cyan-400" />
-                <span>+256 XXX XXX XXX</span>
+
+
+              <div
+                className="
+                  flex
+                  items-center
+                  gap-3
+                  text-slate-400
+                "
+              >
+
+                <FaPhoneAlt
+                  className="
+                    text-[var(--color-primary)]
+                  "
+                />
+
+                <span>
+                  {contact.phone}
+                </span>
+
               </div>
 
-              <div className="flex items-center gap-3 text-slate-400">
-                <FaMapMarkerAlt className="text-cyan-400" />
-                <span>Kampala, Uganda</span>
+
+
+
+              <div
+                className="
+                  flex
+                  items-center
+                  gap-3
+                  text-slate-400
+                "
+              >
+
+                <FaMapMarkerAlt
+                  className="
+                    text-[var(--color-primary)]
+                  "
+                />
+
+                <span>
+                  {contact.location}
+                </span>
+
               </div>
+
 
             </div>
 
           </div>
 
-        </div>
-
-        {/* Bottom */}
-
-        <div className="border-t border-slate-800 py-6 text-center text-sm text-slate-500">
-
-          © 2026 WorkHub. All rights reserved.
 
         </div>
+
+
+
+
+
+        {/* Bottom Copyright */}
+
+        <div
+          className="
+            border-t
+            border-slate-800
+            py-6
+            text-center
+            text-sm
+            text-slate-500
+          "
+        >
+
+          © {new Date().getFullYear()} WorkHub.
+          All rights reserved.
+
+        </div>
+
 
       </Container>
+
     </footer>
   );
 }
+
 
 export default Footer;
